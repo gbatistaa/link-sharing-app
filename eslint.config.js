@@ -38,7 +38,7 @@ export default [
         },
       ],
       "max-len": [
-        "",
+        "warn",
         {
           code: 200,
           ignoreComments: true,
