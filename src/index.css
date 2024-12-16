@@ -1,13 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "./css/fonts.css";
 
-@layer base {
-  @font-face {
-    font-family: "instrument";
-    font-style: normal;
-    font-weight: normal;
-    font-display: swap;
-    src: url("../assets/fonts/font-base.ttf") format("ttf");
-  }
+body {
+  @apply transition-all duration-200 ease-out;
 }
