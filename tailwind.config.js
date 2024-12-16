@@ -20,6 +20,9 @@ export default {
       width: {
         120: "476px",
       },
+      height: {
+        84: "21rem",
+      },
       fontFamily: {
         custom: ["instrument", "sans-serif"],
       },
