@@ -4,6 +4,7 @@ import drop from "../../../../../assets/images/icon-drag-and-drop.svg";
 import linkIcon from "../../../../../assets/images/icon-link.svg";
 import plataforms from "../../../../ts/lists/plataformsList";
 import { linksAtom } from "../../Menu";
+import KeyValuePlataforms from "./keyValuePlataforms";
 
 export const dropAtom = atom<boolean>(false);
 
@@ -36,12 +37,13 @@ function LinksGrid(): JSX.Element {
               <img src={dropdown} className="group-focus:rotate-0 rotate-180 mr-4" />
               <div
                 className="h-fit w-full absolute top-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg
-                z-20 flex-col overflow-y-visible group-focus:grid group-focus:grid-cols-2 hidden"
+                z-20 flex-col overflow-y-visible grid grid-cols-2"
               >
                 {plataforms.map((plataform, idx) => (
-                  <label key={idx} className="px-4 py-2 cursor-pointer hover:bg-gray-200">
-                    <input type="radio" name={`plataform-${linkIndex}`} value={plataform} className="mr-2" />
+                  <label key={idx} className="px-4 py-2 cursor-pointer hover:bg-gray-200 flex flex-row gap-x-2 items-center">
+                    <input type="radio" name={`plataform-${linkIndex}`} value={plataform} className="hidden" />
                     {plataform}
+                    <KeyValuePlataforms plataform={plataform} selected={true} />
                   </label>
                 ))}
               </div>
