@@ -15,29 +15,29 @@ import { Plataform } from "../../../../ts/classes/Link";
 function KeyValuePlataforms({ plataform, selected }: { plataform: Plataform; selected: boolean }): JSX.Element {
   switch (plataform) {
     case "GitHub":
-      return <GitHub fillColor={`${selected ? "#737373" : "#633cff"}`} />;
+      return <GitHub fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
     case "Twitter":
-      return <Twitter fillColor={`${selected ? "#737373" : "#633cff"}`} />;
+      return <Twitter fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
     case "LinkedIn":
-      return <LinkedIn fillColor={`${selected ? "#737373" : "#633cff"}`} />;
+      return <LinkedIn fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
     case "YouTube":
-      return <YouTube fillColor={`${selected ? "#737373" : "#633cff"}`} />;
+      return <YouTube fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
     case "Facebook":
-      return <Facebook fillColor={`${selected ? "#737373" : "#633cff"}`} />;
+      return <Facebook fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
     case "Twitch":
-      return <Twitch fillColor={`${selected ? "#737373" : "#633cff"}`} />;
+      return <Twitch fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
     case "Dev.to":
-      return <Devto fillColor={`${selected ? "#737373" : "#633cff"}`} />;
+      return <Devto fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
     case "Codewars":
-      return <Codewars fillColor={`${selected ? "#737373" : "#633cff"}`} />;
+      return <Codewars fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
     case "freeCodeCamp":
-      return <FreeCodeCamp fillColor={`${selected ? "#737373" : "#633cff"}`} />;
+      return <FreeCodeCamp fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
     case "GitLab":
-      return <GitLab fillColor={`${selected ? "#737373" : "#633cff"}`} />;
+      return <GitLab fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
     case "Hashnode":
-      return <HashNode fillColor={`${selected ? "#737373" : "#633cff"}`} />;
+      return <HashNode fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
     case "StackOverflow":
-      return <StackOverFlow fillColor={`${selected ? "#737373" : "#633cff"}`} />;
+      return <StackOverFlow fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
 
     default:
       return <div>NOTHING</div>;
