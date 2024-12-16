@@ -1,20 +1,16 @@
 import { useAtom } from "jotai";
-import UserLink from "../../../../ts/classes/Link";
-import { linksAtom } from "../../Menu";
-import Empty from "./Empty";
-import LinksGrid from "./LinksGrid";
+import LinksGrid, { linksCountAtom } from "./LinksGrid";
 
 function CustomizeLinks(): JSX.Element {
-  const [links, setLinks] = useAtom(linksAtom);
+  const [linksIds, setLinksIds] = useAtom(linksCountAtom);
 
   const incrementLinks = (): void => {
-    setLinks((lnks) => [...lnks, new UserLink("ldkn", "GitHub")]);
-    console.log(links);
+    setLinksIds((ids) => [...ids, 0]);
   };
 
   return (
-    <section className="bg-white max-h-full flex  flex-col col-span-3 p-8 rounded-md">
-      <div className="h-full bg-white flex flex-col gap-y-4">
+    <section className="flex flex-col col-span-3 p-8 max-h-full bg-white rounded-md">
+      <div className="flex flex-col gap-y-4 h-full bg-white">
         <h1 className="text-3xl font-bold">Customize your links</h1>
         <p className="text-sm text-custom-gray">Add/edit/remove links below and then share all your profiles with the world!</p>
         <button
@@ -25,10 +21,10 @@ function CustomizeLinks(): JSX.Element {
         >
           + Add new link
         </button>
-        {links.length === 0 && <Empty />}
-        {links.length > 0 && <LinksGrid />}
+        {linksIds.length === 0 && <LinksGrid />}
+        {linksIds.length > 0 && <LinksGrid />}
       </div>
-      <footer className="flex h-16 justify-end items-end">
+      <footer className="flex justify-end items-end h-16">
         <button
           type="button"
           className="flex justify-center items-center text-sm bg-custom-purple border-solid border-1.5
