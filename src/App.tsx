@@ -1,6 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Login from "./components/Login";
-import Menu from "./components/Menu";
+import Menu from "./components/Menu/Menu";
 import "./css/tailwind.css";
 
 function App(): JSX.Element {
@@ -12,7 +12,10 @@ function App(): JSX.Element {
           <Route path="/" element={<Navigate to="/menu" />} />
 
           <Route path="/login" element={<Login />} />
-          <Route path="/menu" element={<Menu />} />
+          <Route path="/menu" element={<Menu />}>
+            <Route path="/menu/links" />
+            <Route path="/menu/profile-details" />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
