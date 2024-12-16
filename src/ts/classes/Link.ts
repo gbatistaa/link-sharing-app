@@ -3,8 +3,10 @@ export type Plataform = "GitHub" | "Twitter" | "LinkedIn" | "YouTube" | "Faceboo
 export default class UserLink {
   public url: string;
   public plataform: Plataform;
-  constructor(url: string, plataform: Plataform) {
+  public id: number;
+  constructor(url: string, plataform: Plataform, id:number) {
     this.url = url;
     this.plataform = plataform;
+    this.id = id;
   }
 }
