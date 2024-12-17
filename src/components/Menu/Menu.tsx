@@ -1,13 +1,12 @@
 import { atom } from "jotai";
 import { atomFamily } from "jotai/utils";
 import { PrimitiveAtom } from "jotai/vanilla";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import links from "../../../assets/images/icon-links-header.svg";
 import profile from "../../../assets/images/icon-profile-details-header.svg";
 import phone from "../../../assets/images/illustration-phone-mockup.svg";
 import logo from "../../../assets/images/logo-devlinks-large.svg";
 import UserLink from "../../ts/classes/Link";
-import CustomizeLinks from "./components/Links/CustomizeLinks";
 
 export const linksAtomFamily = atomFamily((linkId: number): PrimitiveAtom<UserLink> => {
   return atom<UserLink>(new UserLink("", "", linkId));
@@ -50,7 +49,7 @@ function Menu(): JSX.Element {
         <aside className="flex col-span-2 justify-center items-center p-4 h-full bg-white rounded-md">
           <img src={phone} className="w-1/2 h-fit" />
         </aside>
-        <CustomizeLinks />
+        <Outlet />
       </main>
     </div>
   );
