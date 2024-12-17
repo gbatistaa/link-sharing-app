@@ -1,5 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Login from "./components/Login";
+import CustomizeLinks from "./components/Menu/components/Links/CustomizeLinks";
+import ProfileDetails from "./components/Menu/components/Profile/ProfileDetails";
 import Menu from "./components/Menu/Menu";
 import "./css/tailwind.css";
 
@@ -13,8 +15,8 @@ function App(): JSX.Element {
 
           <Route path="/login" element={<Login />} />
           <Route path="/menu" element={<Menu />}>
-            <Route path="/menu/links" />
-            <Route path="/menu/profile-details" />
+            <Route path="/menu/links" element={<CustomizeLinks />} />
+            <Route path="/menu/profile-details" element={<ProfileDetails />} />
           </Route>
         </Routes>
       </BrowserRouter>
