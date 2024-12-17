@@ -40,7 +40,7 @@ function KeyValuePlataforms({ plataform, selected }: { plataform: Plataform; sel
       return <StackOverFlow fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
 
     default:
-      return <div>NOTHING</div>;
+      return <div>None</div>;
   }
 }
 
