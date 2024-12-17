@@ -12,7 +12,11 @@ function LinksGrid(): JSX.Element {
   return (
     <div className="flex overflow-y-auto z-10 flex-col gap-y-6 p-4 h-84">
       {links.map((link, linkIndex) => (
-        <article key={linkIndex} className="flex flex-col flex-auto gap-y-3 justify-center p-4 w-full max-h-52 rounded-md bg-custom-off-white h-fit">
+        <article
+          key={linkIndex}
+          className="flex flex-col flex-auto gap-y-3 justify-center p-4 w-full max-h-52
+          rounded-md bg-custom-off-white h-fit"
+        >
           <section className="flex justify-between w-full h-fit">
             <div className="flex justify-between items-center w-16">
               <img src={drop} className="" />
@@ -25,7 +29,7 @@ function LinksGrid(): JSX.Element {
             <PlataformChooser linkId={linkIndex + 1} />
           </div>
           <div className="flex flex-col gap-y-1">
-            <p className="text-xs text-custom-gray">Links</p>
+            <p className="text-xs text-custom-gray">Link</p>
             <label
               className="h-10 bg-white border-custom-light-gray focus-within:border-custom-purple
                 border-solid border-1.5 rounded-md w-full flex px-4 gap-x-2"
