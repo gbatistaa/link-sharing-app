@@ -21,7 +21,7 @@ function PlataformChooser({ linkId }: { linkId: number }): JSX.Element {
     <button
       type="button"
       className="h-10 bg-white border-custom-light-gray group focus-within:border-custom-purple border-solid border-1.5
-                rounded-md w-full flex justify-between items-center relative"
+      rounded-md w-full flex justify-between items-center relative"
     >
       <div className="ml-4 flex flex-row gap-x-2 justify-between items-center">
         <KeyValuePlataforms plataform={link.plataform} selected={false} />
@@ -29,8 +29,9 @@ function PlataformChooser({ linkId }: { linkId: number }): JSX.Element {
       </div>
       <img src={dropdown} className="mr-4 rotate-180 group-focus:rotate-0" />
       <div
-        className="group-focus:grid hidden overflow-y-visible group-focus:absolute top-full z-20 grid-cols-2
-        mt-1 w-full bg-white rounded-md h-fit border-1.5 border-solid border-white"
+        className="group-focus:flex group-focus:flex-col hidden overflow-y-visible group-focus:absolute top-full z-20
+        mt-1 w-full bg-white rounded-md h-fit border-1.5 border-solid border-white gap-x-2 divide-y
+        divide-custom-light-gray"
       >
         {plataforms.map((plataform, idx) => (
           <label key={idx} className="flex flex-row gap-x-2 items-center px-4 py-2 cursor-pointer hover:bg-gray-200">
@@ -40,7 +41,7 @@ function PlataformChooser({ linkId }: { linkId: number }): JSX.Element {
               value={plataform}
               checked={link.plataform === plataform}
               onChange={(e) => handlePlataformSelection(e)}
-              className=""
+              className="hidden"
             />
             <span className={`${link.plataform === plataform ? "text-custom-purple" : "text-custom-black"}`}>
               {plataform}
