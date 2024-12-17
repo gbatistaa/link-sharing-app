@@ -1,17 +1,17 @@
 import { atom, useAtom } from "jotai";
 import drop from "../../../../../assets/images/icon-drag-and-drop.svg";
-import linkIcon from "../../../../../assets/images/icon-link.svg";
 import PlataformChooser from "./PlataformChooser";
+import UrlChooser from "./UrlChooser";
 
 export const dropAtom = atom<boolean>(false);
 export const linksCountAtom = atom<number[]>([]);
 
 function LinksGrid(): JSX.Element {
-  const [links] = useAtom(linksCountAtom);
+  const [linksIds, setLinksIds] = useAtom(linksCountAtom);
 
   return (
     <div className="flex overflow-y-auto z-10 flex-col gap-y-6 p-4 h-84">
-      {links.map((link, linkIndex) => (
+      {linksIds.map((linkId, linkIndex) => (
         <article
           key={linkIndex}
           className="flex flex-col flex-auto gap-y-3 justify-center p-4 w-full max-h-52
@@ -30,13 +30,7 @@ function LinksGrid(): JSX.Element {
           </div>
           <div className="flex flex-col gap-y-1">
             <p className="text-xs text-custom-gray">Link</p>
-            <label
-              className="h-10 bg-white border-custom-light-gray focus-within:border-custom-purple
-                border-solid border-1.5 rounded-md w-full flex px-4 gap-x-2"
-            >
-              <img src={linkIcon} />
-              <input type="text" className="w-full bg-transparent outline-none" />
-            </label>
+            <UrlChooser linkId={linkIndex + 1} />
           </div>
         </article>
       ))}
