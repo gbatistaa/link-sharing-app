@@ -10,7 +10,7 @@ import UserLink from "../../ts/classes/Link";
 import CustomizeLinks from "./components/Links/CustomizeLinks";
 
 export const linksAtomFamily = atomFamily((linkId: number): PrimitiveAtom<UserLink> => {
-  return atom<UserLink>(new UserLink("", "GitHub", linkId));
+  return atom<UserLink>(new UserLink("", "", linkId));
 });
 
 function Menu(): JSX.Element {
@@ -23,14 +23,16 @@ function Menu(): JSX.Element {
         <div className="flex gap-x-4 justify-between w-60">
           <Link
             to="links"
-            className="flex gap-x-1 justify-center items-center px-5 h-10 text-sm font-semibold rounded-md bg-custom-lavender text-custom-purple text-nowrap w-fit"
+            className="flex gap-x-1 justify-center items-center px-5 h-10 text-sm font-semibold rounded-md
+          bg-custom-lavender text-custom-purple text-nowrap w-fit"
           >
             <img src={links} className="w-auto h-5" alt="Links Icon" />
             Links
           </Link>
           <Link
             to="profile-details"
-            className="flex gap-x-1 justify-center items-center px-5 h-10 text-sm font-semibold rounded-md bg-custom-lavender text-custom-purple text-nowrap w-fit"
+            className="flex gap-x-1 justify-center items-center px-5 h-10 text-sm font-semibold rounded-md
+          bg-custom-lavender text-custom-purple text-nowrap w-fit"
           >
             <img src={profile} className="w-auto h-5" alt="Profile Icon" />
             Profile Details
