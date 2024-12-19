@@ -8,7 +8,12 @@ import "./css/tailwind.css";
 function App(): JSX.Element {
   return (
     <div className="h-auto w-auto transition-all ease-out duration-200">
-      <BrowserRouter>
+      <BrowserRouter
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true,
+        }}
+      >
         <Routes>
           {/* <Route path="/" element={<Navigate to="/login" />} /> */}
           <Route path="/" element={<Navigate to="/menu" />} />
