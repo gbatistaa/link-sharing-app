@@ -16,7 +16,7 @@ function App(): JSX.Element {
       >
         <Routes>
           {/* <Route path="/" element={<Navigate to="/login" />} /> */}
-          <Route path="/" element={<Navigate to="/menu" />} />
+          <Route path="/" element={<Navigate to="/menu/links" />} />
 
           <Route path="/login" element={<Login />} />
           <Route path="/menu" element={<Menu />}>
