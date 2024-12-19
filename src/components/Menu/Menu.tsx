@@ -17,12 +17,12 @@ function Menu(): JSX.Element {
 
   return (
     <div className="flex flex-col gap-y-4 p-4 w-screen h-screen bg-custom-off-white">
-      <header className="flex justify-between items-center p-4 w-full h-auto bg-white rounded-md">
+      <header className="flex justify-between items-center p-4 w-full h-auto bg-white rounded-lg">
         <img src={logo} className="w-auto h-7" alt="Logo" />
         <div className="flex gap-x-4 justify-between w-60">
           <Link
             to="links"
-            className="flex gap-x-1 justify-center items-center px-5 h-10 text-sm font-semibold rounded-md
+            className="flex gap-x-1 justify-center items-center px-5 h-10 text-sm font-semibold rounded-lg
           bg-custom-lavender text-custom-purple text-nowrap w-fit"
           >
             <img src={links} className="w-auto h-5" alt="Links Icon" />
@@ -30,7 +30,7 @@ function Menu(): JSX.Element {
           </Link>
           <Link
             to="profile-details"
-            className="flex gap-x-1 justify-center items-center px-5 h-10 text-sm font-semibold rounded-md
+            className="flex gap-x-1 justify-center items-center px-5 h-10 text-sm font-semibold rounded-lg
           bg-custom-lavender text-custom-purple text-nowrap w-fit"
           >
             <img src={profile} className="w-auto h-5" alt="Profile Icon" />
@@ -40,13 +40,13 @@ function Menu(): JSX.Element {
         <button
           type="button"
           className="flex justify-center items-center text-sm border-custom-purple border-solid border-1.5
-           text-custom-purple font-semibold text-nowrap hover:bg-custom-lavender w-fit px-5 gap-x-1 h-10 rounded-md"
+           text-custom-purple font-semibold text-nowrap hover:bg-custom-lavender w-fit px-5 gap-x-1 h-10 rounded-lg"
         >
           Preview
         </button>
       </header>
       <main className="grid grid-cols-5 gap-x-4 h-full">
-        <aside className="flex col-span-2 justify-center items-center p-4 h-full bg-white rounded-md">
+        <aside className="flex col-span-2 justify-center items-center p-4 h-full bg-white rounded-lg">
           <img src={phone} className="w-1/2 h-fit" />
         </aside>
         <Outlet />

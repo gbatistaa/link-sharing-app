@@ -29,11 +29,17 @@ function Login(): JSX.Element {
              bg-white flex justify-between focus-within:border-custom-purple text-sm focus-within:shadow-md shadow-custom-light-purple"
             >
               <img src={password} alt="Password Icon" />
-              <input type="password" placeholder="Enter your password" className="w-11/12 outline-none focus:outline-none" />
+              <input
+                type="password"
+                placeholder="Enter your password"
+                className="w-11/12 outline-none focus:outline-none"
+              />
             </label>
           </div>
         </div>
-        <button className="min-h-10 w-full text-white text-sm flex justify-center items-center bg-custom-purple hover:bg-custom-light-purple rounded-lg">Login</button>
+        <button className="min-h-10 w-full text-white text-sm flex justify-center items-center bg-custom-purple hover:bg-custom-light-purple rounded-lg">
+          Login
+        </button>
         <p className="text-sm text-custom-gray">
           Don't have an account?
           <span className="text-custom-purple"> Create account</span>
