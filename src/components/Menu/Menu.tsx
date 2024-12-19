@@ -13,8 +13,6 @@ export const linksAtomFamily = atomFamily((linkId: number): PrimitiveAtom<UserLi
 });
 
 function Menu(): JSX.Element {
-  console.log(document.body.innerHTML);
-
   return (
     <div className="flex flex-col gap-y-4 p-4 w-screen h-screen bg-custom-off-white">
       <header className="flex justify-between items-center p-4 w-full h-auto bg-white rounded-lg">
