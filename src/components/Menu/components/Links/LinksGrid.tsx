@@ -5,6 +5,7 @@ import UrlChooser from "./UrlChooser";
 
 export const dropAtom = atom<boolean>(false);
 export const linksCountAtom = atom<number[]>([]);
+export const currentIdAtom = atom<number>(0);
 
 function LinksGrid(): JSX.Element {
   const [linksIds, setLinksIds] = useAtom(linksCountAtom);
