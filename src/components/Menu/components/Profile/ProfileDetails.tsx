@@ -6,7 +6,7 @@ import { ProfilePicture } from "../../../../ts/classes/ProfilePicture";
 import UserCredentials from "../../../../ts/classes/UserCredentials";
 
 // Atom para o estado da imagem
-const pictureAtom = atomWithStorage<ProfilePicture>("profilePicture", { file: { name: "", size: 0, type: "", content: "" } });
+export const pictureAtom = atomWithStorage<ProfilePicture>("profilePicture", { file: { name: "", size: 0, type: "", content: "" } });
 
 // Atom para os dados do usuário
 export const userCredentialsAtom = atomWithStorage<UserCredentials>("userCredentials", {
@@ -17,7 +17,7 @@ export const userCredentialsAtom = atomWithStorage<UserCredentials>("userCredent
 
 function ProfileDetails(): JSX.Element {
   const [profilePicture, setProfilePicture] = useAtom(pictureAtom);
-  const [, setUserCredentials] = useAtom(userCredentialsAtom);
+  const [userCredentials, setUserCredentials] = useAtom(userCredentialsAtom);
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     if (event.target.files && event.target.files[0]) {
@@ -79,15 +79,36 @@ function ProfileDetails(): JSX.Element {
       <section className="flex flex-col flex-grow gap-y-2 justify-between p-4 rounded-lg bg-custom-off-white">
         <label className="flex justify-between items-center w-full h-fit">
           <p className="text-sm text-custom-gray">First Name*</p>
-          <input type="text" name="firstName" className="w-1/2 h-8 rounded-lg bg-white border-1.5 border-solid border-custom-light-gray outline-none focus:border-custom-purple px-2 text-sm text-custom-black" autoComplete="off" onChange={(e) => handleUserCredentialsUpdate(e)} />
+          <input
+            type="text"
+            name="firstName"
+            className="w-1/2 h-8 rounded-lg bg-white border-1.5 border-solid border-custom-light-gray outline-none focus:border-custom-purple px-2 text-sm text-custom-black"
+            autoComplete="off"
+            onChange={(e) => handleUserCredentialsUpdate(e)}
+            value={userCredentials.firstName}
+          />
         </label>
         <label className="flex justify-between items-center w-full h-fit">
           <p className="text-sm text-custom-gray">Last Name*</p>
-          <input type="text" name="lastName" className="w-1/2 h-8 rounded-lg bg-white border-1.5 border-solid border-custom-light-gray outline-none focus:border-custom-purple px-2 text-sm text-custom-black" autoComplete="off" onChange={(e) => handleUserCredentialsUpdate(e)} />
+          <input
+            type="text"
+            name="lastName"
+            className="w-1/2 h-8 rounded-lg bg-white border-1.5 border-solid border-custom-light-gray outline-none focus:border-custom-purple px-2 text-sm text-custom-black"
+            autoComplete="off"
+            onChange={(e) => handleUserCredentialsUpdate(e)}
+            value={userCredentials.lastName}
+          />
         </label>
         <label className="flex justify-between items-center w-full h-fit">
           <p className="text-sm text-custom-gray">Email</p>
-          <input type="text" name="email" className="w-1/2 h-8 rounded-lg bg-white border-1.5 border-solid border-custom-light-gray outline-none focus:border-custom-purple px-2 text-sm text-custom-black" autoComplete="off" onChange={(e) => handleUserCredentialsUpdate(e)} />
+          <input
+            type="text"
+            name="email"
+            className="w-1/2 h-8 rounded-lg bg-white border-1.5 border-solid border-custom-light-gray outline-none focus:border-custom-purple px-2 text-sm text-custom-black"
+            autoComplete="off"
+            onChange={(e) => handleUserCredentialsUpdate(e)}
+            value={userCredentials.email}
+          />
         </label>
       </section>
       <footer className="flex justify-end mt-auto w-full h-auto">
