@@ -1,21 +1,24 @@
 import { useAtom } from "jotai";
 import Empty from "./Empty";
-import LinksGrid, { linksCountAtom } from "./LinksGrid";
+import LinksGrid, { currentIdAtom, linksCountAtom } from "./LinksGrid";
 
 function CustomizeLinks(): JSX.Element {
   const [linksIds, setLinksIds] = useAtom(linksCountAtom);
+  const [currentId, setCurrentId] = useAtom(currentIdAtom);
 
   const incrementLinks = (): void => {
-    setLinksIds((ids) => [...ids, 0]);
+    setCurrentId((current) => {
+      const newId = current + 1;
+      setLinksIds((ids) => [...ids, newId]);
+      return newId;
+    });
   };
 
   return (
     <form className="flex flex-col col-span-3 p-8 max-h-full bg-white rounded-lg">
       <div className="flex flex-col gap-y-4 h-full bg-white">
         <h1 className="text-3xl font-bold">Customize your links</h1>
-        <p className="text-sm text-custom-gray">
-          Add/edit/remove links below and then share all your profiles with the world!
-        </p>
+        <p className="text-sm text-custom-gray">Add/edit/remove links below and then share all your profiles with the world!</p>
         <button
           type="button"
           className="flex justify-center items-center text-sm border-custom-purple border-solid border-1.5
