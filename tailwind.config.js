@@ -22,9 +22,13 @@ export default {
       },
       height: {
         84: "21rem",
+        phone: "610px",
       },
       fontFamily: {
         custom: ["instrument", "sans-serif"],
+      },
+      maxHeight: {
+        phone: "610px",
       },
     },
   },
