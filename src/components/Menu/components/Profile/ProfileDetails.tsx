@@ -8,7 +8,9 @@ import UserCredentials from "../../../../ts/classes/UserCredentials";
 // Atom para o estado da imagem
 const storageAtom = atomWithStorage<ProfilePicture>("profilePicture", { name: "", size: 0, type: "", url: null });
 
-const pictureAtom = atom<ProfilePicture>((get) => { }, (get, set) =>);
+const pictureAtom = atom<ProfilePicture>((get) => {
+  
+})
 
 // Atom para os dados do usuário
 export const userCredentialsAtom = atomWithStorage<UserCredentials>("userCredentials", {
