@@ -24,7 +24,7 @@ function PlataformChooser({ linkId }: { linkId: number }): JSX.Element {
       rounded-lg w-full flex justify-between items-center relative"
     >
       <div className="ml-4 flex flex-row gap-x-2 justify-between items-center">
-        <KeyValuePlataforms plataform={link.plataform} selected={false} />
+        <KeyValuePlataforms plataform={link.plataform} colorState={false} />
         <p className="text-custom-black">{link.plataform}</p>
       </div>
       <img src={dropdown} className="mr-4 rotate-180 group-focus:rotate-0" />
@@ -37,7 +37,7 @@ function PlataformChooser({ linkId }: { linkId: number }): JSX.Element {
           <label key={idx} className="flex flex-row gap-x-2 items-center px-4 py-2 cursor-pointer hover:bg-gray-200">
             <input type="radio" name={`plataform-${linkId}`} value={plataform} checked={link.plataform === plataform} onChange={(e) => handlePlataformSelection(e)} className="hidden" />
             <span className={`${link.plataform === plataform ? "text-custom-purple" : "text-custom-black"}`}>{plataform}</span>
-            <KeyValuePlataforms plataform={plataform} selected={link.plataform === plataform} />
+            <KeyValuePlataforms plataform={plataform} colorState={link.plataform === plataform} />
           </label>
         ))}
       </div>
