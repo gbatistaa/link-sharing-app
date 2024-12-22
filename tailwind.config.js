@@ -22,14 +22,19 @@ export default {
       },
       height: {
         84: "21rem",
-        10.5: "42px",
+        11.5: "46px",
         phone: "610px",
+        ["1/10"]: "10%",
+        ["3/20"]: "15%",
       },
       fontFamily: {
         custom: ["instrument", "sans-serif"],
       },
       maxHeight: {
         phone: "610px",
+      },
+      gap: {
+        links: "0.76rem",
       },
     },
   },
