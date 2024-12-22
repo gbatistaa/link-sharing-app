@@ -22,6 +22,7 @@ export default {
       },
       height: {
         84: "21rem",
+        10.5: "42px",
         phone: "610px",
       },
       fontFamily: {
