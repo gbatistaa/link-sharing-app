@@ -8,10 +8,10 @@ export const linksCountAtom = atom<number[]>([]);
 export const currentIdAtom = atom<number>(0);
 
 function LinksGrid(): JSX.Element {
-  const [linksIds, setLinksIds] = useAtom(linksCountAtom);
+  const [linksIds] = useAtom(linksCountAtom);
 
   return (
-    <div className="flex overflow-y-auto z-10 flex-col gap-y-6 p-4 h-84">
+    <div className="flex flex-col overflow-y-auto z-10  flex-auto gap-y-6 p-4 h-84">
       {linksIds.map((linkId, linkIndex) => (
         <article
           key={linkIndex}
