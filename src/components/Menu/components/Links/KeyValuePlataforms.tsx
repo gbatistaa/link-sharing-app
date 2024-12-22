@@ -11,33 +11,36 @@ import Twitch from "../../../../../assets/images/logo/icon-twitch";
 import Twitter from "../../../../../assets/images/logo/icon-twitter";
 import YouTube from "../../../../../assets/images/logo/icon-youtube";
 import { Plataform } from "../../../../ts/classes/Link";
+import { iconColorSelector } from "../../../../ts/logic/ColorSelectors";
 
-function KeyValuePlataforms({ plataform, selected }: { plataform: Plataform; selected: boolean }): JSX.Element {
+function KeyValuePlataforms({ plataform, colorState }: { plataform: Plataform; colorState: boolean | "card" }): JSX.Element {
+  const color = iconColorSelector(colorState);
+
   switch (plataform) {
     case "GitHub":
-      return <GitHub fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
+      return <GitHub fillColor={color} />;
     case "Twitter":
-      return <Twitter fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
+      return <Twitter fillColor={color} />;
     case "LinkedIn":
-      return <LinkedIn fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
+      return <LinkedIn fillColor={color} />;
     case "YouTube":
-      return <YouTube fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
+      return <YouTube fillColor={color} />;
     case "Facebook":
-      return <Facebook fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
+      return <Facebook fillColor={color} />;
     case "Twitch":
-      return <Twitch fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
+      return <Twitch fillColor={color} />;
     case "Dev.to":
-      return <Devto fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
+      return <Devto fillColor={color} />;
     case "Codewars":
-      return <Codewars fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
+      return <Codewars fillColor={color} />;
     case "freeCodeCamp":
-      return <FreeCodeCamp fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
+      return <FreeCodeCamp fillColor={color} />;
     case "GitLab":
-      return <GitLab fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
+      return <GitLab fillColor={color} />;
     case "Hashnode":
-      return <HashNode fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
+      return <HashNode fillColor={color} />;
     case "StackOverflow":
-      return <StackOverFlow fillColor={`${!selected ? "#737373" : "#633cff"}`} />;
+      return <StackOverFlow fillColor={color} />;
 
     default:
       return <div>None</div>;
