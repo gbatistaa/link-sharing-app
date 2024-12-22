@@ -17,31 +17,53 @@ function LinksViewerPhone(): JSX.Element {
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    if (imgRef.current) {
-      const updateHeight = (): void => setImgHeight(imgRef.current!.offsetHeight);
-      updateHeight();
+    const updateHeight = (): void => {
+      if (imgRef.current) {
+        setImgHeight(imgRef.current.offsetHeight);
+      }
+    };
 
-      window.addEventListener("resize", updateHeight);
-      return () => window.removeEventListener("resize", updateHeight);
+    // Atualiza a altura após a imagem carregar
+    const imgElement = imgRef.current;
+    if (imgElement && imgElement.complete) {
+      updateHeight(); // Se a imagem já está carregada
+    } else if (imgElement) {
+      imgElement.addEventListener("load", updateHeight); // Aguarda o carregamento
     }
+
+    // Atualiza a altura ao redimensionar a janela
+    window.addEventListener("resize", updateHeight);
+
+    // Limpeza dos listeners
+    return () => {
+      if (imgElement) {
+        imgElement.removeEventListener("load", updateHeight);
+      }
+      window.removeEventListener("resize", updateHeight);
+    };
   }, [setImgHeight]);
 
   return (
     <aside className="flex col-span-2 justify-center items-center p-4 h-full bg-white rounded-lg relative">
-      <div className="flex flex-col px-6 gap-y-8 items-center justify-between border-solid border-red-500 border-2 absolute z-30 w-1/2" style={{ height: `${imgHeight}px` }}>
+      <div
+        className="flex flex-col px-6 items-center justify absolute z-30 w-1/2"
+        style={{ height: `${imgHeight}px` }} // Sincroniza a altura com a imagem
+      >
+        <div className="w-full h-1/10 z-30"></div>
         {/* USER INFOS DIV */}
-        <div className="flex flex-col w-full bg-white justify-center items-center gap-y-2 z-30 border-solid border-green-500 border-2 mt-14">
+        <div className="flex flex-col w-full bg-white justify-center items-center gap-y-4 z-30">
           <div
             className={`w-1/3 aspect-square rounded-full border-solid border-4 border-custom-purple ${profilePicture.file.content ? "bg-cover bg-center" : ""}`}
             style={{
               backgroundImage: `url(${profilePicture.file.content})`,
             }}
           ></div>
-          <h3 className="font-semibold text-xl">{userCredentials.lastName !== "" && userCredentials.firstName !== "" ? `${userCredentials.firstName} ${userCredentials.lastName}` : "Your Name"}</h3>
+          <h3 className="font-semibold text-xl">{userCredentials.lastName !== "" || userCredentials.firstName !== "" ? `${userCredentials.firstName} ${userCredentials.lastName}` : "Your Name"}</h3>
           <p className="text-sm text-custom-gray">{userCredentials.email !== "" ? userCredentials.email : "username@example.com"}</p>
         </div>
+
         {/* CARD LINKS DIV*/}
-        <div className="flex flex-col items-center gap-y-5 h-50 w-full z-30 bg-white">
+        <div className="flex flex-col items-center pt-8 pb-4 gap-y-4 flex-auto w-full z-30 mt-auto mb-10 bg-white rounded-xl">
           {linksIds.map((link, index) => (
             <LinkCard linkId={index + 1} key={index} />
           ))}
