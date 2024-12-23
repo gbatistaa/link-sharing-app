@@ -3,8 +3,8 @@ import PreviewCard from "./PreviewCard";
 
 function Preview(): JSX.Element {
   return (
-    <section className="flex h-screen">
-      <header className="h-2/5 bg-custom-purple w-full p-6 rounded-b-3xl">
+    <section className="flex items-center justify-center h-screen bg-custom-off-white">
+      <header className="h-2/5 bg-custom-purple w-full p-6 rounded-b-3xl absolute top-0 z-10">
         <div className="h-1/4 flex justify-between items-center px-4 bg-white rounded-lg">
           <Link
             to="/menu"
