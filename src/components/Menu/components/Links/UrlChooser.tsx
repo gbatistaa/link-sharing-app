@@ -19,12 +19,7 @@ function UrlChooser({ linkId }: { linkId: number }): JSX.Element {
     border-solid border-1.5 rounded-md w-full flex px-4 gap-x-2 text-custom-black"
     >
       <img src={linkIcon} />
-      <input
-        type="text"
-        className="w-full bg-transparent outline-none"
-        value={link.url}
-        onChange={(e) => handleLinkUrlChange(e)}
-      />
+      <input type="text" className="w-full bg-transparent outline-none" value={link.url} onChange={(e) => handleLinkUrlChange(e)} />
     </label>
   );
 }
