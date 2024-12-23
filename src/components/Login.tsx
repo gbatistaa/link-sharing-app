@@ -16,7 +16,8 @@ function Login(): JSX.Element {
             <p className="text-xs">Email address</p>
             <label
               className="h-10 w-full px-4 border-1.5 border-custom-light-gray rounded-lg
-             bg-white flex justify-between focus-within:border-custom-purple text-sm focus-within:shadow-md shadow-custom-light-purple"
+             bg-white flex justify-between focus-within:border-custom-purple text-sm
+              focus-within:shadow-md shadow-custom-light-purple"
             >
               <img src={email} alt="Email Icon" />
               <input type="text" placeholder="you@example.com" className="w-11/12 outline-none focus:outline-none" />
@@ -26,7 +27,8 @@ function Login(): JSX.Element {
             <p className="text-xs">Password</p>
             <label
               className="h-10 w-full px-4 border-1.5 border-custom-light-gray rounded-lg
-             bg-white flex justify-between focus-within:border-custom-purple text-sm focus-within:shadow-md shadow-custom-light-purple"
+             bg-white flex justify-between focus-within:border-custom-purple text-sm
+              focus-within:shadow-md shadow-custom-light-purple"
             >
               <img src={password} alt="Password Icon" />
               <input
@@ -37,7 +39,10 @@ function Login(): JSX.Element {
             </label>
           </div>
         </div>
-        <button className="min-h-10 w-full text-white text-sm flex justify-center items-center bg-custom-purple hover:bg-custom-light-purple rounded-lg">
+        <button
+          className="min-h-10 w-full text-white text-sm flex justify-center items-center
+         bg-custom-purple hover:bg-custom-light-purple rounded-lg"
+        >
           Login
         </button>
         <p className="text-sm text-custom-gray">
