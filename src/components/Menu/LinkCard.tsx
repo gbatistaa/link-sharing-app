@@ -4,22 +4,23 @@ import { cardColorSelector } from "../../ts/logic/ColorSelectors";
 import { linksAtomFamily } from "./Menu";
 import KeyValuePlataforms from "./components/Links/KeyValuePlataforms";
 
-function LinkCard({ linkId }: { linkId: number }): JSX.Element {
+function LinkCard({ linkId, isPreview }: { linkId: number; isPreview: boolean }): JSX.Element {
   const [link] = useAtom(linksAtomFamily(linkId));
 
   const linkCardBgColor = cardColorSelector(link.plataform);
 
   return (
-    <label
-      htmlFor=""
-      className={`${linkCardBgColor} w-11/12 h-3/20 rounded-md flex justify-between items-center cursor-pointer p-2`}
+    <a
+      className={`${linkCardBgColor} ${isPreview ? "h-1/5 w-3/4" : "h-3/20 w-11/12"}
+       rounded-md flex justify-between items-center cursor-pointer p-2`}
+      href={link.url}
     >
       <div className="flex flex-row justify-between items-center gap-x-4">
         <KeyValuePlataforms plataform={link.plataform} colorState={"card"} />
-        <p className="text-white text-sm">{link.plataform}</p>
+        <p className={`text-white ${isPreview ? " text-sm" : "text-base"}`}>{link.plataform}</p>
       </div>
       <img src={arrow} alt="arrow" />
-    </label>
+    </a>
   );
 }
 
