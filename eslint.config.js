@@ -40,7 +40,7 @@ export default [
       "max-len": [
         "warn",
         {
-          code: 120,
+          code: 150,
           ignoreComments: true,
           ignoreUrls: true,
         },
