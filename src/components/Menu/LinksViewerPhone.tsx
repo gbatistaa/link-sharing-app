@@ -64,7 +64,7 @@ function LinksViewerPhone(): JSX.Element {
               ? `${userCredentials.firstName} ${userCredentials.lastName}`
               : "Your Name"}
           </h3>
-          <p className="text-sm text-custom-gray">
+          <p className="text-sm text-custom-gray text-wrap">
             {userCredentials.email !== "" ? userCredentials.email : "username@example.com"}
           </p>
         </div>
