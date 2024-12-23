@@ -46,7 +46,7 @@ export default {
         phone: "610px",
       },
       minHeight: {
-        phone: "90%",
+        phone: "610px",
       },
       gap: {
         links: "0.76rem",
