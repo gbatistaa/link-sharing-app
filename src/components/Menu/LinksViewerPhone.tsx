@@ -53,7 +53,8 @@ function LinksViewerPhone(): JSX.Element {
         {/* USER INFOS DIV */}
         <div className="flex flex-col w-full bg-white justify-center items-center gap-y-4 z-30">
           <div
-            className={`w-1/3 aspect-square rounded-full border-solid border-4 border-custom-purple ${profilePicture.file.content ? "bg-cover bg-center" : ""}`}
+            className={`w-1/3 aspect-square rounded-full border-solid border-4 border-custom-purple
+             ${profilePicture.file.content ? "bg-cover bg-center" : ""}`}
             style={{
               backgroundImage: `url(${profilePicture.file.content})`,
             }}
@@ -63,7 +64,10 @@ function LinksViewerPhone(): JSX.Element {
         </div>
 
         {/* CARD LINKS DIV*/}
-        <div className="flex flex-col items-center pt-8 pb-4 gap-y-4 flex-auto w-full z-30 mt-auto mb-10 bg-white rounded-xl">
+        <div
+          className="flex flex-col items-center pt-8 pb-4 gap-y-4
+         flex-auto w-full z-30 mt-auto mb-10 bg-white rounded-xl"
+        >
           {linksIds.map((link, index) => (
             <LinkCard linkId={index + 1} key={index} />
           ))}
