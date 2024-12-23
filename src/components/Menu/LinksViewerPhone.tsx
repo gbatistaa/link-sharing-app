@@ -1,9 +1,9 @@
 import { atom, useAtom } from "jotai";
 import { useEffect, useRef } from "react";
 import phone from "../../../assets/images/illustration-phone-mockup.svg";
+import LinkCard from "./LinkCard";
 import { linksCountAtom } from "./components/Links/LinksGrid";
 import { pictureAtom, userCredentialsAtom } from "./components/Profile/ProfileDetails";
-import LinkCard from "./LinkCard";
 
 // Atom para armazenar a altura da imagem
 const imgHeightAtom = atom(0);
@@ -44,14 +44,14 @@ function LinksViewerPhone(): JSX.Element {
   }, [setImgHeight]);
 
   return (
-    <aside className="flex col-span-2 justify-center items-center p-4 h-full bg-white rounded-lg relative">
+    <aside className="flex relative col-span-2 justify-center items-center p-4 h-full bg-white rounded-lg">
       <div
-        className="flex flex-col px-6 items-center absolute z-30 w-1/2"
+        className="flex absolute z-30 flex-col items-center px-6 w-1/2"
         style={{ height: `${imgHeight}px` }} // Sincroniza a altura com a imagem
       >
-        <div className="w-full h-1/10 z-30"></div>
+        <div className="z-30 w-full h-1/10"></div>
         {/* USER INFOS DIV */}
-        <div className="flex flex-col w-full bg-white justify-center items-center gap-y-4 z-30">
+        <div className="flex z-30 flex-col gap-y-4 justify-center items-center w-full bg-white">
           <div
             className={`w-1/3 aspect-square rounded-full border-solid border-4 border-custom-purple
              ${profilePicture.file.content ? "bg-cover bg-center" : ""}`}
@@ -59,7 +59,7 @@ function LinksViewerPhone(): JSX.Element {
               backgroundImage: `url(${profilePicture.file.content})`,
             }}
           ></div>
-          <h3 className="font-semibold text-xl">
+          <h3 className="text-xl font-semibold">
             {userCredentials.lastName !== "" || userCredentials.firstName !== ""
               ? `${userCredentials.firstName} ${userCredentials.lastName}`
               : "Your Name"}
@@ -69,8 +69,7 @@ function LinksViewerPhone(): JSX.Element {
 
         {/* CARD LINKS DIV*/}
         <div
-          className="flex flex-col items-center pt-8 pb-4 gap-y-4
-         flex-auto w-full z-30 mt-auto mb-10 bg-white rounded-xl"
+          className="flex z-30 flex-col flex-auto gap-y-4 items-center pt-8 pb-4 mt-auto mb-10 w-full bg-white rounded-xl"
         >
           {linksIds.map((link, index) => (
             <LinkCard linkId={index + 1} key={index} />
@@ -78,7 +77,7 @@ function LinksViewerPhone(): JSX.Element {
         </div>
       </div>
       {/* PHONE VIEWER SVG */}
-      <img ref={imgRef} src={phone} className="w-1/2 h-auto min-h-phone z-20" />
+      <img ref={imgRef} src={phone} className="z-20 w-1/2 h-auto" />
     </aside>
   );
 }
