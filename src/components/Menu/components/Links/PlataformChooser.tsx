@@ -35,7 +35,14 @@ function PlataformChooser({ linkId }: { linkId: number }): JSX.Element {
       >
         {plataforms.map((plataform, idx) => (
           <label key={idx} className="flex flex-row gap-x-2 items-center px-4 py-2 cursor-pointer hover:bg-gray-200">
-            <input type="radio" name={`plataform-${linkId}`} value={plataform} checked={link.plataform === plataform} onChange={(e) => handlePlataformSelection(e)} className="hidden" />
+            <input
+              type="radio"
+              name={`plataform-${linkId}`}
+              value={plataform}
+              checked={link.plataform === plataform}
+              onChange={(e) => handlePlataformSelection(e)}
+              className="hidden"
+            />
             <span className={`${link.plataform === plataform ? "text-custom-purple" : "text-custom-black"}`}>{plataform}</span>
             <KeyValuePlataforms plataform={plataform} colorState={link.plataform === plataform} />
           </label>
