@@ -46,7 +46,7 @@ function LinksViewerPhone(): JSX.Element {
   return (
     <aside className="flex col-span-2 justify-center items-center p-4 h-full bg-white rounded-lg relative">
       <div
-        className="flex flex-col px-6 items-center justify absolute z-30 w-1/2"
+        className="flex flex-col px-6 items-center absolute z-30 w-1/2"
         style={{ height: `${imgHeight}px` }} // Sincroniza a altura com a imagem
       >
         <div className="w-full h-1/10 z-30"></div>
@@ -59,7 +59,11 @@ function LinksViewerPhone(): JSX.Element {
               backgroundImage: `url(${profilePicture.file.content})`,
             }}
           ></div>
-          <h3 className="font-semibold text-xl">{userCredentials.lastName !== "" || userCredentials.firstName !== "" ? `${userCredentials.firstName} ${userCredentials.lastName}` : "Your Name"}</h3>
+          <h3 className="font-semibold text-xl">
+            {userCredentials.lastName !== "" || userCredentials.firstName !== ""
+              ? `${userCredentials.firstName} ${userCredentials.lastName}`
+              : "Your Name"}
+          </h3>
           <p className="text-sm text-custom-gray">{userCredentials.email !== "" ? userCredentials.email : "username@example.com"}</p>
         </div>
 
@@ -74,7 +78,7 @@ function LinksViewerPhone(): JSX.Element {
         </div>
       </div>
       {/* PHONE VIEWER SVG */}
-      <img ref={imgRef} src={phone} className="w-1/2 h-auto z-20" />
+      <img ref={imgRef} src={phone} className="w-1/2 h-auto min-h-phone z-20" />
     </aside>
   );
 }
