@@ -1,11 +1,12 @@
 import { atom, useAtom } from "jotai";
+import { atomWithStorage } from "jotai/utils";
 import drop from "../../../../../assets/images/icon-drag-and-drop.svg";
 import PlataformChooser from "./PlataformChooser";
 import UrlChooser from "./UrlChooser";
 
 export const dropAtom = atom<boolean>(false);
-export const linksCountAtom = atom<number[]>([]);
-export const currentIdAtom = atom<number>(0);
+export const linksCountAtom = atomWithStorage<number[]>("linksIdsList", []);
+export const currentIdAtom = atomWithStorage<number>("currentId", 0);
 
 function LinksGrid(): JSX.Element {
   const [linksIds] = useAtom(linksCountAtom);
