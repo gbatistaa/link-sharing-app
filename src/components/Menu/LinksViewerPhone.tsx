@@ -75,7 +75,7 @@ function LinksViewerPhone(): JSX.Element {
             mt-auto mb-10 w-full bg-white rounded-xl"
         >
           {linksIds.map((link, index) => (
-            <LinkCard linkId={index + 1} key={index} />
+            <LinkCard isPreview={false} linkId={index + 1} key={index} />
           ))}
         </div>
       </div>
