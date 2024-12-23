@@ -34,13 +34,13 @@ function Menu(): JSX.Element {
             Profile Details
           </Link>
         </div>
-        <button
-          type="button"
+        <Link
+          to="/preview"
           className="flex justify-center items-center text-sm border-custom-purple border-solid border-1.5
            text-custom-purple font-semibold text-nowrap hover:bg-custom-lavender w-fit px-5 gap-x-1 h-10 rounded-lg"
         >
           Preview
-        </button>
+        </Link>
       </header>
       <main className="grid grid-cols-5 gap-x-4 h-full">
         <LinksViewerPhone />
