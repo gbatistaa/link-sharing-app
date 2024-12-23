@@ -49,7 +49,7 @@ function KeyValuePlataforms({
       return <StackOverFlow fillColor={color} />;
 
     default:
-      return <div>None</div>;
+      return <div></div>;
   }
 }
 
