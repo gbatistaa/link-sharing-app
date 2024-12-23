@@ -7,7 +7,6 @@ export const iconColorSelector = (code: "card" | boolean): string => {
     case true:
       return "#633cff";
     default:
-      console.log(code);
       return "#ffffff";
   }
 };
