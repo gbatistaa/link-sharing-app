@@ -13,7 +13,13 @@ import YouTube from "../../../../../assets/images/logo/icon-youtube";
 import { Plataform } from "../../../../ts/classes/Link";
 import { iconColorSelector } from "../../../../ts/logic/ColorSelectors";
 
-function KeyValuePlataforms({ plataform, colorState }: { plataform: Plataform; colorState: boolean | "card" }): JSX.Element {
+function KeyValuePlataforms({
+  plataform,
+  colorState,
+}: {
+  plataform: Plataform;
+  colorState: boolean | "card";
+}): JSX.Element {
   const color = iconColorSelector(colorState);
 
   switch (plataform) {

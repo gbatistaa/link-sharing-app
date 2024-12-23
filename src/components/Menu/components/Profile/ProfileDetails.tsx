@@ -6,7 +6,9 @@ import { ProfilePicture } from "../../../../ts/classes/ProfilePicture";
 import UserCredentials from "../../../../ts/classes/UserCredentials";
 
 // Atom para o estado da imagem
-export const pictureAtom = atomWithStorage<ProfilePicture>("profilePicture", { file: { name: "", size: 0, type: "", content: "" } });
+export const pictureAtom = atomWithStorage<ProfilePicture>("profilePicture", {
+  file: { name: "", size: 0, type: "", content: "" },
+});
 
 // Atom para os dados do usuário
 export const userCredentialsAtom = atomWithStorage<UserCredentials>("userCredentials", {
@@ -62,13 +64,17 @@ function ProfileDetails(): JSX.Element {
         <p className="text-sm text-custom-gray">Profile Picture</p>
         <label
           htmlFor="profilePicture"
-          className={`flex flex-col bg-center bg-cover gap-y-2 justify-center items-center h-full rounded-lg cursor-pointer aspect-square font-semibold text-sm ${profilePicture.file.content ? "bg-cover" : "bg-custom-lavender"}`}
+          className={`flex flex-col bg-center bg-cover gap-y-2 justify-center items-center h-full rounded-lg
+            cursor-pointer aspect-square font-semibold text-sm
+            ${profilePicture.file.content ? "bg-cover" : "bg-custom-lavender"}`}
           style={{
             backgroundImage: profilePicture.file.content ? `url(${profilePicture.file.content})` : undefined,
           }}
         >
           <UploadImageIcon fillColor={`${profilePicture.file.content ? "#ffffff" : "#633cff"}`} />
-          <p className={`${profilePicture.file.content ? "text-white" : "text-custom-purple"}`}>{`${profilePicture.file.content ? "Change Image" : "+Upload Image"}`}</p>
+          <p
+            className={`${profilePicture.file.content ? "text-white" : "text-custom-purple"}`}
+          >{`${profilePicture.file.content ? "Change Image" : "+Upload Image"}`}</p>
           <input type="file" id="profilePicture" className="hidden" onChange={(e) => handleImageChange(e)} />
         </label>
         <div className="flex flex-col">
@@ -82,7 +88,8 @@ function ProfileDetails(): JSX.Element {
           <input
             type="text"
             name="firstName"
-            className="w-1/2 h-8 rounded-lg bg-white border-1.5 border-solid border-custom-light-gray outline-none focus:border-custom-purple px-2 text-sm text-custom-black"
+            className="w-1/2 h-8 rounded-lg bg-white border-1.5 border-solid
+             border-custom-light-gray outline-none focus:border-custom-purple px-2 text-sm text-custom-black"
             autoComplete="off"
             onChange={(e) => handleUserCredentialsUpdate(e)}
             value={userCredentials.firstName}
@@ -93,7 +100,8 @@ function ProfileDetails(): JSX.Element {
           <input
             type="text"
             name="lastName"
-            className="w-1/2 h-8 rounded-lg bg-white border-1.5 border-solid border-custom-light-gray outline-none focus:border-custom-purple px-2 text-sm text-custom-black"
+            className="w-1/2 h-8 rounded-lg bg-white border-1.5 border-solid
+             border-custom-light-gray outline-none focus:border-custom-purple px-2 text-sm text-custom-black"
             autoComplete="off"
             onChange={(e) => handleUserCredentialsUpdate(e)}
             value={userCredentials.lastName}
@@ -104,7 +112,8 @@ function ProfileDetails(): JSX.Element {
           <input
             type="text"
             name="email"
-            className="w-1/2 h-8 rounded-lg bg-white border-1.5 border-solid border-custom-light-gray outline-none focus:border-custom-purple px-2 text-sm text-custom-black"
+            className="w-1/2 h-8 rounded-lg bg-white border-1.5 border-solid
+             border-custom-light-gray outline-none focus:border-custom-purple px-2 text-sm text-custom-black"
             autoComplete="off"
             onChange={(e) => handleUserCredentialsUpdate(e)}
             value={userCredentials.email}
@@ -112,7 +121,11 @@ function ProfileDetails(): JSX.Element {
         </label>
       </section>
       <footer className="flex justify-end mt-auto w-full h-auto">
-        <button type="submit" className="flex justify-center items-center text-sm bg-custom-purple border-solid border-1.5 text-white font-semibold w-fit h-10 hover:bg-custom-light-purple px-5 gap-x-1  rounded-md">
+        <button
+          type="submit"
+          className="flex justify-center items-center text-sm bg-custom-purple border-solid border-1.5
+           text-white font-semibold w-fit h-10 hover:bg-custom-light-purple px-5 gap-x-1  rounded-md"
+        >
           Save
         </button>
       </footer>

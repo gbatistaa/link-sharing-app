@@ -43,7 +43,9 @@ function PlataformChooser({ linkId }: { linkId: number }): JSX.Element {
               onChange={(e) => handlePlataformSelection(e)}
               className="hidden"
             />
-            <span className={`${link.plataform === plataform ? "text-custom-purple" : "text-custom-black"}`}>{plataform}</span>
+            <span className={`${link.plataform === plataform ? "text-custom-purple" : "text-custom-black"}`}>
+              {plataform}
+            </span>
             <KeyValuePlataforms plataform={plataform} colorState={link.plataform === plataform} />
           </label>
         ))}

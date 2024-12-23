@@ -18,7 +18,9 @@ function CustomizeLinks(): JSX.Element {
     <form className="flex flex-col col-span-3 p-8 max-h-full bg-white rounded-lg">
       <div className="flex flex-col gap-y-4 h-full bg-white">
         <h1 className="text-3xl font-bold">Customize your links</h1>
-        <p className="text-sm text-custom-gray">Add/edit/remove links below and then share all your profiles with the world!</p>
+        <p className="text-sm text-custom-gray">
+          Add/edit/remove links below and then share all your profiles with the world!
+        </p>
         <button
           type="button"
           className="flex justify-center items-center text-sm border-custom-purple border-solid border-1.5
