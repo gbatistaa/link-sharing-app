@@ -1,5 +1,5 @@
-import { atom, PrimitiveAtom } from "jotai";
-import { atomFamily } from "jotai/utils";
+import { Atom } from "jotai";
+import { atomFamily, atomWithStorage } from "jotai/utils";
 import { Link, Outlet } from "react-router-dom";
 import links from "../../../assets/images/icon-links-header.svg";
 import profile from "../../../assets/images/icon-profile-details-header.svg";
@@ -7,8 +7,8 @@ import logo from "../../../assets/images/logo-devlinks-large.svg";
 import UserLink from "../../ts/classes/Link";
 import LinksViewerPhone from "./LinksViewerPhone";
 
-export const linksAtomFamily = atomFamily((linkId: number): PrimitiveAtom<UserLink> => {
-  return atom<UserLink>(new UserLink("", "", linkId));
+export const linksAtomFamily = atomFamily((linkId: number): Atom<UserLink> => {
+  return atomWithStorage<UserLink>(`link-${linkId}`, new UserLink("", "", linkId));
 });
 
 function Menu(): JSX.Element {
