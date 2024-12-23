@@ -64,12 +64,15 @@ function LinksViewerPhone(): JSX.Element {
               ? `${userCredentials.firstName} ${userCredentials.lastName}`
               : "Your Name"}
           </h3>
-          <p className="text-sm text-custom-gray">{userCredentials.email !== "" ? userCredentials.email : "username@example.com"}</p>
+          <p className="text-sm text-custom-gray">
+            {userCredentials.email !== "" ? userCredentials.email : "username@example.com"}
+          </p>
         </div>
 
         {/* CARD LINKS DIV*/}
         <div
-          className="flex z-30 flex-col flex-auto gap-y-4 items-center pt-8 pb-4 mt-auto mb-10 w-full bg-white rounded-xl"
+          className="flex z-30 flex-col flex-auto gap-y-4 items-center pt-8 pb-4
+            mt-auto mb-10 w-full bg-white rounded-xl"
         >
           {linksIds.map((link, index) => (
             <LinkCard linkId={index + 1} key={index} />
@@ -77,7 +80,7 @@ function LinksViewerPhone(): JSX.Element {
         </div>
       </div>
       {/* PHONE VIEWER SVG */}
-      <img ref={imgRef} src={phone} className="z-20 w-1/2 h-auto" />
+      <img ref={imgRef} src={phone} className="z-20 w-1/2 min-h-phone h-auto" />
     </aside>
   );
 }
