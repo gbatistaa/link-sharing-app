@@ -3,7 +3,7 @@ import Login from "./components/Login";
 import CustomizeLinks from "./components/Menu/components/Links/CustomizeLinks";
 import ProfileDetails from "./components/Menu/components/Profile/ProfileDetails";
 import Menu from "./components/Menu/Menu";
-import Preview from "./components/Preview";
+import Preview from "./components/Preview/Preview";
 import "./css/tailwind.css";
 
 function App(): JSX.Element {
