@@ -80,7 +80,7 @@ function LinksViewerPhone(): JSX.Element {
         </div>
       </div>
       {/* PHONE VIEWER SVG */}
-      <img ref={imgRef} src={phone} className="z-20 w-1/2 min-h-phone h-auto" />
+      <img ref={imgRef} src={phone} className="z-20 w-1/2 h-auto" />
     </aside>
   );
 }
