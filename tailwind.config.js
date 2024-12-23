@@ -45,6 +45,9 @@ export default {
       maxHeight: {
         phone: "610px",
       },
+      minHeight: {
+        phone: "90%",
+      },
       gap: {
         links: "0.76rem",
       },
