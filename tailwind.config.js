@@ -34,10 +34,12 @@ export default {
       },
       height: {
         84: "21rem",
+        68: "17rem",
         11.5: "46px",
         phone: "610px",
         ["1/10"]: "10%",
         ["3/20"]: "15%",
+        ["5/12"]: "41.666667%",
       },
       fontFamily: {
         custom: ["instrument", "sans-serif"],
