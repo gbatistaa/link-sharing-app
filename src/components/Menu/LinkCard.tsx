@@ -10,10 +10,13 @@ function LinkCard({ linkId }: { linkId: number }): JSX.Element {
   const linkCardBgColor = cardColorSelector(link.plataform);
 
   return (
-    <label htmlFor="" className={`${linkCardBgColor} w-11/12 h-3/20 rounded-md flex justify-between items-center cursor-pointer`}>
+    <label
+      htmlFor=""
+      className={`${linkCardBgColor} w-11/12 h-3/20 rounded-md flex justify-between items-center cursor-pointer p-2`}
+    >
       <div className="flex flex-row justify-between items-center gap-x-4">
         <KeyValuePlataforms plataform={link.plataform} colorState={"card"} />
-        <p className="text-white">{link.plataform}</p>
+        <p className="text-white text-sm">{link.plataform}</p>
       </div>
       <img src={arrow} alt="arrow" />
     </label>
