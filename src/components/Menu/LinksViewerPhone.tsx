@@ -1,9 +1,9 @@
 import { atom, useAtom } from "jotai";
 import { useEffect, useRef } from "react";
 import phone from "../../../assets/images/illustration-phone-mockup.svg";
-import LinkCard from "./LinkCard";
-import { linksCountAtom } from "./components/Links/LinksGrid";
 import { pictureAtom, userCredentialsAtom } from "./components/Profile/ProfileDetails";
+import LinkCard from "./LinkCard";
+import { linksAtom } from "./Menu";
 
 // Atom para armazenar a altura da imagem
 const imgHeightAtom = atom(0);
@@ -11,7 +11,7 @@ const imgHeightAtom = atom(0);
 function LinksViewerPhone(): JSX.Element {
   const [userCredentials] = useAtom(userCredentialsAtom);
   const [profilePicture] = useAtom(pictureAtom);
-  const [linksIds] = useAtom(linksCountAtom);
+  const [links] = useAtom(linksAtom);
   const [imgHeight, setImgHeight] = useAtom(imgHeightAtom);
 
   const imgRef = useRef<HTMLImageElement>(null);
@@ -74,9 +74,10 @@ function LinksViewerPhone(): JSX.Element {
           className="flex z-30 flex-col flex-auto gap-y-4 items-center pt-8 pb-4
             mt-auto mb-10 w-full bg-white rounded-xl"
         >
-          {linksIds.map((link, index) => (
-            <LinkCard isPreview={false} linkId={index + 1} key={index} />
-          ))}
+          {links.map((link, index) => {
+            console.log(link);
+            return <LinkCard isPreview={false} linkId={index} key={index} />;
+          })}
         </div>
       </div>
       {/* PHONE VIEWER SVG */}
