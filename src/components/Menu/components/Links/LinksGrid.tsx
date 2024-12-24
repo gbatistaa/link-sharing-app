@@ -10,7 +10,7 @@ export const linksCountAtom = atomWithStorage<number[]>("linksIdsList", []);
 export const currentIdAtom = atomWithStorage<number>("currentId", 0);
 
 function LinksGrid(): JSX.Element {
-  const [links, setLinks] = useAtom(linksAtom);
+  const [links] = useAtom(linksAtom);
 
   // const removeLink = (chosenId: number, event: React.MouseEvent<HTMLButtonElement>): void => {
   //   event.preventDefault();
@@ -38,11 +38,11 @@ function LinksGrid(): JSX.Element {
           </section>
           <div className="flex flex-col gap-y-1">
             <p className="text-xs text-custom-gray">Platform</p>
-            <PlataformChooser linkId={index} />
+            <PlataformChooser linkId={index} link={link} />
           </div>
           <div className="flex flex-col gap-y-1">
             <p className="text-xs text-custom-gray">Link</p>
-            <UrlChooser linkId={index} />
+            <UrlChooser linkId={index} link={link} />
           </div>
         </article>
       ))}
