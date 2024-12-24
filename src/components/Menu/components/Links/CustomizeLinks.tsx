@@ -1,16 +1,16 @@
 import { useAtom } from "jotai";
+import UserLink from "../../../../ts/classes/Link";
+import { linksAtom } from "../../Menu";
 import Empty from "./Empty";
-import LinksGrid, { currentIdAtom, linksCountAtom } from "./LinksGrid";
+import LinksGrid from "./LinksGrid";
 
 function CustomizeLinks(): JSX.Element {
-  const [linksIds, setLinksIds] = useAtom(linksCountAtom);
-  const [currentId, setCurrentId] = useAtom(currentIdAtom);
+  const [links, setLinks] = useAtom(linksAtom);
 
   const incrementLinks = (): void => {
-    setCurrentId((current) => {
-      const newId = current + 1;
-      setLinksIds((ids) => [...ids, newId]);
-      return newId;
+    setLinks((currLinks) => {
+      const newLinks = [...currLinks, new UserLink("", "", 0)];
+      return newLinks;
     });
   };
 
@@ -30,8 +30,8 @@ function CustomizeLinks(): JSX.Element {
         >
           + Add new link
         </button>
-        {linksIds.length === 0 && <Empty />}
-        {linksIds.length > 0 && <LinksGrid />}
+        {links.length === 0 && <Empty />}
+        {links.length > 0 && <LinksGrid />}
       </div>
       <footer className="flex justify-end items-end h-16">
         <button
