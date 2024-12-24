@@ -11,9 +11,9 @@ function PreviewCard(): JSX.Element {
   return (
     <main
       className="flex flex-col items-center w-80 h-fit bg-white z-20
-     rounded-3xl shadow-md gap-y-6 p-6"
+     rounded-3xl shadow-md gap-y-12 p-11"
     >
-      <section className="flex flex-col items-center gap-y-4 w-full">
+      <section className="flex flex-col items-center gap-y-4 w-full mb-auto">
         <div
           className={`w-1/3 aspect-square rounded-full border-solid border-4 border-custom-purple
              ${profilePicture.file.content ? "bg-cover bg-center" : ""}`}
@@ -24,7 +24,7 @@ function PreviewCard(): JSX.Element {
         <h3 className="text-2xl font-bold">{`${userCredentials.firstName} ${userCredentials.lastName}`}</h3>
         <p className="text-sm text-custom-gray text-wrap">{userCredentials.email}</p>
       </section>
-      <div className="flex flex-col items-center w-full h-68 gap-y-3 max-xl:w-10/12">
+      <div className="flex flex-col items-center w-full h-fit gap-y-4 max-xl:w-10/12">
         {links.map((link, index) => {
           return <LinkCard isPreview={true} linkId={index} key={index} />;
         })}
