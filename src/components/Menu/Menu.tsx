@@ -6,7 +6,7 @@ import logo from "../../../assets/images/logo-devlinks-large.svg";
 import UserLink from "../../ts/classes/Link";
 import LinksViewerPhone from "./LinksViewerPhone";
 
-export const linksAtom = atomWithStorage<UserLink[]>("links", [new UserLink("", "", 0)]);
+export const linksAtom = atomWithStorage<UserLink[]>("links", []);
 
 function Menu(): JSX.Element {
   return (
