@@ -7,11 +7,13 @@ import LinksGrid from "./LinksGrid";
 function CustomizeLinks(): JSX.Element {
   const [links, setLinks] = useAtom(linksAtom);
 
-  const incrementLinks = (): void => {
-    setLinks((currLinks) => {
-      const newLinks = [...currLinks, new UserLink("", "", 0)];
-      return newLinks;
-    });
+  const createNewLink = (): void => {
+    if (links.length < 5) {
+      setLinks((currLinks) => {
+        const newLinks = [...currLinks, new UserLink("", "", 0)];
+        return newLinks;
+      });
+    }
   };
 
   return (
@@ -26,7 +28,7 @@ function CustomizeLinks(): JSX.Element {
           className="flex justify-center items-center text-sm border-custom-purple border-solid border-1.5
         text-custom-purple font-semibold text-nowrap hover:bg-custom-lavender px-5 gap-x-1 rounded-lg
           w-full h-8 min-h-8"
-          onClick={() => incrementLinks()}
+          onClick={() => createNewLink()}
         >
           + Add new link
         </button>
