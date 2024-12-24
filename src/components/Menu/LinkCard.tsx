@@ -14,7 +14,7 @@ function LinkCard({ isPreview, linkId }: { isPreview: boolean; linkId: number })
     <>
       {isPreview ? (
         <a
-          className={`${linkCardBgColor} ${isPreview ? "h-1/5 w-3/4" : "h-3/20 w-11/12"}
+          className={`${linkCardBgColor} ${isPreview ? "h-12 w-full" : "h-3/20 w-11/12"}
             rounded-md flex justify-between items-center cursor-pointer p-2`}
           href={link.url}
         >
@@ -26,7 +26,7 @@ function LinkCard({ isPreview, linkId }: { isPreview: boolean; linkId: number })
         </a>
       ) : (
         <label
-          className={`${linkCardBgColor} ${isPreview ? "h-1/5 w-3/4" : "h-3/20 w-11/12"}
+          className={`${linkCardBgColor} ${isPreview ? "h-12 w-full" : "h-3/20 w-11/12"}
      rounded-md flex justify-between items-center cursor-pointer p-2`}
         >
           <div className="flex flex-row justify-between items-center gap-x-4">
