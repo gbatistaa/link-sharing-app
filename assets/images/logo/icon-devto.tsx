@@ -1,10 +1,11 @@
-import React from "react";
-
 function Devto({ fillColor }: { fillColor: string }): JSX.Element {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
       <g clip-path="url(#a)">
-        <path fill={fillColor} d="M12.25 0h-8.5A3.75 3.75 0 0 0 0 3.75v8.5A3.75 3.75 0 0 0 3.75 16h8.5A3.75 3.75 0 0 0 16 12.25v-8.5A3.75 3.75 0 0 0 12.25 0Z" />
+        <path
+          fill={fillColor}
+          d="M12.25 0h-8.5A3.75 3.75 0 0 0 0 3.75v8.5A3.75 3.75 0 0 0 3.75 16h8.5A3.75 3.75 0 0 0 16 12.25v-8.5A3.75 3.75 0 0 0 12.25 0Z"
+        />
         <path
           fill="#fff"
           fill-rule="evenodd"

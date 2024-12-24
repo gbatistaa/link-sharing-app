@@ -1,4 +1,3 @@
-
 function StackOverflow({ fillColor }: { fillColor: string }): JSX.Element {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" fill="none" viewBox="0 0 16 17">
