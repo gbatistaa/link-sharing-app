@@ -1,22 +1,22 @@
 import { useAtom } from "jotai";
 import React from "react";
 import dropdown from "../../../../../assets/images/icon-chevron-down.svg";
-import { Plataform } from "../../../../ts/classes/Link";
+import UserLink, { Plataform } from "../../../../ts/classes/Link";
 import plataforms from "../../../../ts/lists/plataformsList";
 import { linksAtom } from "../../Menu";
 import KeyValuePlataforms from "./KeyValuePlataforms";
 
-function PlataformChooser({ linkId }: { linkId: number }): JSX.Element {
-  const [links, setLinks] = useAtom(linksAtom);
-
-  const link = links[linkId];
+function PlataformChooser({ linkId, link }: { linkId: number; link: UserLink }): JSX.Element {
+  const [, setLinks] = useAtom(linksAtom);
 
   const handlePlataformSelection = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const newPlataform = event.target.value as Plataform;
+
     setLinks((currLinks) => {
-      const newLinks = currLinks;
-      newLinks[linkId].plataform = newPlataform;
-      return newLinks;
+      return currLinks.map((currLink, index) => {
+        if (index === linkId) return { ...currLink, plataform: newPlataform };
+        return currLink;
+      });
     });
   };
 
