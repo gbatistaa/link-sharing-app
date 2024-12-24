@@ -3,18 +3,21 @@ import React from "react";
 import dropdown from "../../../../../assets/images/icon-chevron-down.svg";
 import { Plataform } from "../../../../ts/classes/Link";
 import plataforms from "../../../../ts/lists/plataformsList";
-import { linksAtomFamily } from "../../Menu";
+import { linksAtom } from "../../Menu";
 import KeyValuePlataforms from "./KeyValuePlataforms";
 
 function PlataformChooser({ linkId }: { linkId: number }): JSX.Element {
-  const [link, setLink] = useAtom(linksAtomFamily(linkId));
+  const [links, setLinks] = useAtom(linksAtom);
+
+  const link = links[linkId];
 
   const handlePlataformSelection = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const newPlataform = event.target.value as Plataform;
-    setLink((currLink) => ({
-      ...currLink,
-      plataform: newPlataform,
-    }));
+    setLinks((currLinks) => {
+      const newLinks = currLinks;
+      newLinks[linkId].plataform = newPlataform;
+      return newLinks;
+    });
   };
 
   return (

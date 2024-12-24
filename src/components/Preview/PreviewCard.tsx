@@ -1,12 +1,12 @@
 import { useAtom } from "jotai";
-import { linksCountAtom } from "../Menu/components/Links/LinksGrid";
 import { pictureAtom, userCredentialsAtom } from "../Menu/components/Profile/ProfileDetails";
 import LinkCard from "../Menu/LinkCard";
+import { linksAtom } from "../Menu/Menu";
 
 function PreviewCard(): JSX.Element {
   const [userCredentials] = useAtom(userCredentialsAtom);
   const [profilePicture] = useAtom(pictureAtom);
-  const [linksIds] = useAtom(linksCountAtom);
+  const [links] = useAtom(linksAtom);
 
   return (
     <main
@@ -25,8 +25,8 @@ function PreviewCard(): JSX.Element {
         <p className="text-sm text-custom-gray text-wrap">{userCredentials.email}</p>
       </section>
       <div className="flex flex-col items-center w-full h-68 gap-y-3 max-xl:w-10/12">
-        {linksIds.map((link, index) => {
-          return <LinkCard isPreview={true} linkId={index + 1} key={index} />;
+        {links.map((link, index) => {
+          return <LinkCard isPreview={true} linkId={index} key={index} />;
         })}
       </div>
     </main>
