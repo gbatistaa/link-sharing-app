@@ -1,19 +1,19 @@
 import { useAtom } from "jotai";
 import linkIcon from "../../../../../assets/images/icon-link.svg";
-import { Plataform } from "../../../../ts/classes/Link";
+import UserLink, { Plataform } from "../../../../ts/classes/Link";
 import { linksAtom } from "../../Menu";
 
-function UrlChooser({ linkId }: { linkId: number }): JSX.Element {
+function UrlChooser({ linkId, link }: { linkId: number; link: UserLink }): JSX.Element {
   const [links, setLinks] = useAtom(linksAtom);
 
-  const link = links[linkId];
-
-  const handlePlataformSelection = (event: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleUrlSelection = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const newUrl = event.target.value as Plataform;
+
     setLinks((currLinks) => {
-      const newLinks = currLinks;
-      newLinks[linkId].url = newUrl;
-      return newLinks;
+      return currLinks.map((currLink, index) => {
+        if (index === linkId) return { ...currLink, url: newUrl };
+        return currLink;
+      });
     });
   };
 
@@ -27,7 +27,7 @@ function UrlChooser({ linkId }: { linkId: number }): JSX.Element {
         type="text"
         className="w-full bg-transparent outline-none"
         value={link.url}
-        onChange={(e) => handlePlataformSelection(e)}
+        onChange={(e) => handleUrlSelection(e)}
       />
     </label>
   );
