@@ -4,7 +4,7 @@ import UserLink, { Plataform } from "../../../../ts/classes/Link";
 import { linksAtom } from "../../Menu";
 
 function UrlChooser({ linkId, link }: { linkId: number; link: UserLink }): JSX.Element {
-  const [links, setLinks] = useAtom(linksAtom);
+  const [, setLinks] = useAtom(linksAtom);
 
   const handleUrlSelection = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const newUrl = event.target.value as Plataform;
