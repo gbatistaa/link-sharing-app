@@ -10,7 +10,7 @@ function CustomizeLinks(): JSX.Element {
   const createNewLink = (): void => {
     if (links.length < 5) {
       setLinks((currLinks) => {
-        const newLinks = [...currLinks, new UserLink("", "", 0)];
+        const newLinks = [...currLinks, new UserLink("", "")];
         return newLinks;
       });
     }
