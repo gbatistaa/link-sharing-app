@@ -16,10 +16,8 @@ export type Plataform =
 export default class UserLink {
   public url: string;
   public plataform: Plataform;
-  public id: number;
-  constructor(url: string, plataform: Plataform, id: number) {
+  constructor(url: string, plataform: Plataform) {
     this.url = url;
     this.plataform = plataform;
-    this.id = id;
   }
 }
