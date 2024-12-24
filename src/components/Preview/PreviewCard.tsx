@@ -13,7 +13,7 @@ function PreviewCard(): JSX.Element {
       className="flex flex-col items-center w-80 h-fit bg-white z-20
      rounded-3xl shadow-md gap-y-6 p-6"
     >
-      <section className="flex flex-col items-center gap-y-4">
+      <section className="flex flex-col items-center gap-y-4 w-full">
         <div
           className={`w-1/3 aspect-square rounded-full border-solid border-4 border-custom-purple
              ${profilePicture.file.content ? "bg-cover bg-center" : ""}`}
