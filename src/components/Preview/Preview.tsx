@@ -9,7 +9,7 @@ function Preview(): JSX.Element {
           <Link
             to="/menu"
             className="h-3/5 w-fit px-5 flex justify-center items-center border-custom-purple border-solid border-1.5
-             font-semibold text-custom-purple text-sm rounded-md"
+             font-semibold text-custom-purple text-sm rounded-md cursor-pointer"
           >
             Back to Editor
           </Link>
