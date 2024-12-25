@@ -1,5 +1,5 @@
 import { useAtom } from "jotai";
-import React from "react";
+import React, { useRef } from "react";
 import dropdown from "../../../../../assets/images/icon-chevron-down.svg";
 import UserLink, { Plataform } from "../../../../ts/classes/Link";
 import plataforms from "../../../../ts/lists/plataformsList";
@@ -8,6 +8,8 @@ import KeyValuePlataforms from "./KeyValuePlataforms";
 
 function PlataformChooser({ linkId, link }: { linkId: number; link: UserLink }): JSX.Element {
   const [, setLinks] = useAtom(linksAtom);
+
+  const plataformsDivRef = useRef(null);
 
   const handlePlataformSelection = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const newPlataform = event.target.value as Plataform;
@@ -35,6 +37,7 @@ function PlataformChooser({ linkId, link }: { linkId: number; link: UserLink }):
         className="group-focus:flex group-focus:flex-col hidden overflow-y-visible group-focus:absolute top-full z-20
         mt-1 w-full bg-white rounded-lg h-fit border-1.5 border-solid border-white gap-x-2 divide-y
         divide-custom-light-gray"
+        ref={plataformsDivRef}
       >
         {plataforms.map((plataform, idx) => (
           <label key={idx} className="flex flex-row gap-x-2 items-center px-4 py-2 cursor-pointer hover:bg-gray-200">
