@@ -26,6 +26,7 @@ function PreviewCard(): JSX.Element {
       </section>
       <div className="flex flex-col items-center w-full h-fit gap-y-4 max-xl:w-10/12">
         {links.map((link, index) => {
+          link;
           return <LinkCard isPreview={true} linkId={index} key={index} />;
         })}
       </div>
