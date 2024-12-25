@@ -12,6 +12,7 @@
   "dependencies": {
     "@netlify/open-api": "^2.35.0",
     "dotenv": "^16.4.7",
+    "fs": "^0.0.1-security",
     "jotai": "^2.10.2",
     "jotai-location": "^0.5.5",
     "react": "^18.3.1",
