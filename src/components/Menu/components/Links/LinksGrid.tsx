@@ -15,6 +15,7 @@ function LinksGrid(): JSX.Element {
   const removeLink = (chosenId: number): void => {
     setLinks((currLinks) => {
       return currLinks.filter((currLink, index) => {
+        currLink;
         return index !== chosenId;
       });
     });
